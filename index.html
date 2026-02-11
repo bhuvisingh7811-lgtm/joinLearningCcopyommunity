@@ -1,153 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Join Learning Community</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>SONU DUBAI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Segoe UI", Arial, sans-serif;
-        }
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #141823, #05070c 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
 
-        body {
-            background: #000;
-            color: #fff;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+/* ===== CARD ===== */
+.card {
+  width: 340px;
+  background: linear-gradient(180deg, #0e1016, #000);
+  border-radius: 22px;
+  padding: 22px 18px 26px;
+  text-align: center;
+  position: relative;
+  box-shadow:
+    0 0 0 2px rgba(255,214,0,0.25),
+    0 0 45px rgba(255,214,0,0.45);
+}
 
-        /* 🔒 FORCE MOBILE WIDTH EVEN ON DESKTOP */
-        .wrapper {
-            width: 100%;
-            max-width: 390px;   /* mobile width */
-            background: #000;
-            padding: 24px 16px 30px;
-            text-align: center;
-        }
+/* ===== TOP BADGE ===== */
+.badge {
+  background: #ffd600;
+  color: #000;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 8px 16px;
+  border-radius: 30px;
+  display: inline-block;
+  margin-bottom: 18px;
+  animation: glowPulse 1.8s infinite alternate;
+}
 
-        /* 🔥 PINK CTA BUTTON */
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            width: 100%;
-            padding: 14px;
-            background: #ff0080;
-            color: #fff;
-            border-radius: 999px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 15px;
-            margin-bottom: 22px;
-        }
+@keyframes glowPulse {
+  from {
+    box-shadow: 0 0 10px rgba(255,214,0,.6),
+                0 0 20px rgba(255,214,0,.6);
+  }
+  to {
+    box-shadow: 0 0 20px rgba(255,214,0,1),
+                0 0 45px rgba(255,214,0,.9);
+  }
+}
 
-        /* 🔵 CIRCULAR IMAGE */
-        .profile {
-            width: 220px;
-            height: 220px;
-            margin: 0 auto 22px;
-            border-radius: 50%;
-            border: 5px solid #ff00ff;
-            overflow: hidden;
-        }
+/* ===== LOGO ===== */
+.logo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin: 0 auto 12px;
+  background: #000;
+  border: 3px solid #ffd600;
+  box-shadow: 0 0 18px rgba(255,214,0,0.9);
+  overflow: hidden;
+}
 
-        .profile img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-        h1 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
+/* ===== TEXT ===== */
+h1 {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
 
-        .subtitle {
-            font-size: 15px;
-            line-height: 1.4;
-            margin-bottom: 20px;
-        }
+.subtitle {
+  font-size: 13px;
+  line-height: 1.4;
+  color: #cfcfcf;
+  margin-bottom: 18px;
+}
 
-        .section-title {
-            font-size: 14px;
-            margin-bottom: 14px;
-        }
+/* ===== STATS ===== */
+.stats {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 22px;
+}
 
-        ul {
-            list-style: none;
-            text-align: left;
-            margin-bottom: 24px;
-        }
+.stat-box {
+  flex: 1;
+  background: #111318;
+  border-radius: 12px;
+  padding: 10px 6px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
 
-        ul li {
-            font-size: 14px;
-            line-height: 1.5;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: flex-start;
-            gap: 8px;
-        }
+.stat-box strong {
+  display: block;
+  font-size: 15px;
+  color: #ffd600;
+}
 
-        .disclaimer {
-            font-size: 12px;
-            color: #ff6b6b;
-            line-height: 1.5;
-            margin-top: 18px;
-        }
-    </style>
+.stat-box span {
+  font-size: 11px;
+  color: #b5b5b5;
+}
+
+/* ===== JOIN BUTTON ===== */
+.join-btn {
+  background: linear-gradient(180deg, #ffe66a, #ffd600);
+  color: #000;
+  font-size: 15px;
+  font-weight: 900;
+  padding: 14px 0;
+  border-radius: 14px;
+  text-decoration: none;
+  display: block;
+  box-shadow:
+    0 6px 22px rgba(255,214,0,0.7),
+    inset 0 -2px 0 rgba(0,0,0,0.25);
+  animation: moveLR 1.4s infinite ease-in-out,
+             pulse 1.6s infinite;
+}
+
+/* left-right */
+@keyframes moveLR {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  50% { transform: translateX(0); }
+  75% { transform: translateX(6px); }
+  100% { transform: translateX(0); }
+}
+
+/* pulse */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 rgba(255,214,0,.7); }
+  70% { box-shadow: 0 0 25px rgba(255,214,0,.9); }
+  100% { box-shadow: 0 0 0 rgba(255,214,0,.7); }
+}
+
+.timer {
+  font-size: 11px;
+  color: #9a9a9a;
+  margin-top: 10px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  position: absolute;
+  bottom: -38px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  color: #8a8a8a;
+}
+</style>
 </head>
 
 <body>
 
-<div class="wrapper">
+<div class="card">
 
-    <!-- TOP CTA -->
-    <a href="https://t.me/+k1Cawo1TJmZkNTQ1" class="btn">
-        📖 JOIN LEARNING COMMUNITY
-    </a>
+  <div class="badge">LIVE MATCH PREDICTION ACTIVE</div>
 
-    <!-- IMAGE -->
-    <div class="profile">
-        <img src="WhatsApp Image 2026-02-09 at 9.42.27 PM.jpeg" alt="Profile">
+  <div class="logo">
+    <img src="WhatsApp Image 2026-02-09 at 9.42.27 PM.jpeg" alt="Logo">
+  </div>
+
+  <h1>SONU DUBAI</h1>
+
+  <div class="subtitle">
+    India’s Most Accurate Cricket Predictions.<br>
+    Join for Back-to-Back Wins
+  </div>
+
+  <div class="stats">
+    <div class="stat-box">
+      <strong>98%</strong>
+      <span>Accuracy</span>
     </div>
-
-    <!-- TEXT -->
-    <h1>🟦 Join our Free Learning Community 👇</h1>
-    <p class="subtitle">
-        ✨ Discover Daily Insights, Learn & Grow Together
-    </p>
-
-    <div class="section-title">🔎 What you’ll find inside:</div>
-
-    <ul>
-        <li>📚 Daily educational insights (easy-to-understand concepts)</li>
-        <li>🎯 No tips, no false promises — only genuine learning</li>
-        <li>🤝 Community-driven discussions to exchange ideas</li>
-        <li>🧠 Simple resources to help you think smarter, not just follow trends</li>
-    </ul>
-
-    <!-- BOTTOM CTA -->
-    <a href="https://t.me/+k1Cawo1TJmZkNTQ1" class="btn">
-        📖 JOIN LEARNING COMMUNITY
-    </a>
-
-    <!-- DISCLAIMER -->
-    <div class="disclaimer">
-        Disclaimer: This platform is created only for educational and informational purposes.<br>
-        We do not provide financial advice, investment tips, or guaranteed returns.<br>
-        All shared content is for learning use only.
+    <div class="stat-box">
+      <strong>FREE</strong>
+      <span>Joining</span>
     </div>
+    <div class="stat-box">
+      <strong>24/7</strong>
+      <span>Support</span>
+    </div>
+  </div>
+
+  <a id="joinBtn" class="join-btn" href="https://t.me/+k1Cawo1TJmZkNTQ1">
+    JOIN TELEGRAM →
+  </a>
+
+  <div class="timer">
+    Auto redirect in <span id="countdown">40</span> seconds
+  </div>
+
+  <div class="footer">Ads by Adsgram</div>
 
 </div>
+
+<script>
+let timeLeft = 40;
+const countdown = document.getElementById("countdown");
+const link = document.getElementById("joinBtn").href;
+
+const timer = setInterval(() => {
+  timeLeft--;
+  countdown.textContent = timeLeft;
+
+  if (timeLeft <= 0) {
+    clearInterval(timer);
+    window.location.href = link;
+  }
+}, 1000);
+</script>
 
 </body>
 </html>
